@@ -25,6 +25,9 @@ function suma(x, y) {
     let answer = x + y;
     alert(user_name + ", la suma es " + answer + ".");
     console.log(answer);
+    let operation = new Operation("suma", answer);
+    history.add_to_history(operation);
+    alert(history);
     return;
 }
 
@@ -41,6 +44,9 @@ function resta(x, y) {
     let answer = x - y;
     alert(user_name + ", la resta es " + answer + ".");
     console.log(answer);
+    let operation = new Operation("resta", answer);
+    history.add_to_history(operation);
+    alert(history);
     return;
 }
 
@@ -57,6 +63,9 @@ function multiplicacion(x, y) {
     let answer = x * y;
     alert(user_name + ", el producto es " + answer + ".");
     console.log(answer);
+    let operation = new Operation("multiplicación", answer);
+    history.add_to_history(operation);
+    alert(history);
     return;
 }
 
@@ -74,6 +83,9 @@ function division(x, y) {
     let resto = x % y;
     alert(user_name + ", el cociente es " + answer + " y el resto es " + resto + ".");
     console.log(answer);
+    let operation = new Operation("división", answer);
+    history.add_to_history(operation);
+    alert(history);
     return;
 }
 
@@ -112,12 +124,32 @@ function selector2() {
         case "1":
             selector();
             break;
+        case "2":
+
+            break;
         case "0":
             alert("Adiós " + user_name + "!");
             break;
     }
 }
 //! selector2 end
+// Objects
+class Operation {
+    constructor(name, answer) {
+        this.name = name;
+        this.answer = answer;
+    }
+}
+
+class History {
+    constructor() {
+        this.answers = [];
+    }
+    add_to_history(answer) {
+        this.answers.push(answer);
+    }
+}
+const history = new History();
 
 // simulador start
 alert("Esta página no está diseñada para visualización móvil");
