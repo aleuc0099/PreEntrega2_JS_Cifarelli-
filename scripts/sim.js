@@ -3,21 +3,24 @@
 let first_number = 0;
 let second_number = 0;
 
-//! suma start
-function suma(x, y) {
-    first_number = x;
-    second_number = y;
-    let answer = x + y;
-    alert(answer);
-    console.log(answer);
+// Objects
+class Operation {
+    constructor(name, answer) {
+        this.name = name;
+        this.answer = answer;
+    }
 }
 
-function hacer_suma() {
-    first_number = Number(prompt("inserte un número entero"));
-    second_number = Number(prompt("inserte otro número entero"));
-    suma(first_number, second_number);
+class History {
+    constructor() {
+        this.answers = [];
+    }
+    add_to_history(answer) {
+        this.answers.push(answer);
+    }
 }
-//! suma end
+const history = new History();
+
 //! suma start
 function suma(x, y) {
     first_number = x;
@@ -133,23 +136,6 @@ function selector2() {
     }
 }
 //! selector2 end
-// Objects
-class Operation {
-    constructor(name, answer) {
-        this.name = name;
-        this.answer = answer;
-    }
-}
-
-class History {
-    constructor() {
-        this.answers = [];
-    }
-    add_to_history(answer) {
-        this.answers.push(answer);
-    }
-}
-const history = new History();
 
 // simulador start
 alert("Esta página no está diseñada para visualización móvil");
