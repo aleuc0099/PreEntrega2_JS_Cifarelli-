@@ -31,7 +31,8 @@ function suma(x, y) {
     let operation = new Operation("suma", answer);
     history.add_to_history(operation);
     alert(history);
-    return;
+    console.log(history);
+    return history;
 }
 
 function hacer_suma() {
